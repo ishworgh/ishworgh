@@ -1,0 +1,168 @@
+{{ define "main" }}
+<div class="container py-12">
+  <article>
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold">{{ .Title }}</h1>
+      {{ with .Description }}
+        <p class="mt-2">{{ . }}</p>
+      {{ end }}
+    </header>
+    <section class="prose dark:prose-invert">
+      {{ .Content }}
+    </section>
+    
+    <div class="gallery-grid mt-10 grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {{ range .Page.Resources.ByType "image" }}
+        <div class="gallery-item">
+          <figure>
+            <div class="img-wrapper">
+              <img src="{{ .RelPermalink }}" alt="{{ .Title }}" class="gallery-image" data-src="{{ .RelPermalink }}">
+            </div>
+            {{ with .Title }}
+              <figcaption>{{ . }}</figcaption>
+            {{ end }}
+          </figure>
+        </div>
+      {{ end }}
+      
+      {{ range (where .Site.RegularPages "Section" "gallery") }}
+        {{ $image := .Resources.GetMatch "*.jpg" }}
+        {{ if not $image }}
+          {{ $image = .Resources.GetMatch "*.jpeg" }}
+        {{ end }}
+        {{ if not $image }}
+          {{ $image = .Resources.GetMatch "*.png" }}
+        {{ end }}
+        {{ if $image }}
+          <div class="gallery-item">
+            <figure>
+              <div class="img-wrapper">
+                <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="gallery-image" data-src="{{ $image.RelPermalink }}">
+              </div>
+              <figcaption>{{ .Title }}</figcaption>
+            </figure>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </article>
+</div>
+
+<!-- Modal for enlarged images -->
+<div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden">
+  <!-- Close button (X) in corner -->
+  <button id="closeXBtn" class="absolute top-4 right-4 text-white text-3xl font-bold z-10 hover:text-gray-300 w-10 h-10 flex items-center justify-center rounded-full bg-black bg-opacity-50">×</button>
+  
+  <div class="modal-content max-w-4xl mx-auto p-4 relative">
+    <img src="" alt="" id="modalImage" class="max-w-full max-h-[70vh] mx-auto">
+    <div class="flex justify-between mt-4 flex-col sm:flex-row space-y-2 sm:space-y-0">
+      <button id="downloadBtn" class="px-4 py-2 bg-primary text-white rounded hover:bg-primary-darker w-full sm:w-auto">Download</button>
+      <button id="closeBtn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 w-full sm:w-auto">Close</button>
+    </div>
+    <div class="text-center text-white mt-2 text-sm opacity-70">
+      Press ESC key or click outside to close
+    </div>
+  </div>
+</div>
+
+<style>
+  .gallery-item {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .img-wrapper {
+    overflow: hidden;
+    position: relative;
+    padding-top: 75%; /* 4:3 Aspect Ratio */
+  }
+  
+  .gallery-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .gallery-image:hover {
+    transform: scale(1.05);
+  }
+  
+  figcaption {
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('galleryModal');
+    const modalImg = document.getElementById('modalImage');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const closeXBtn = document.getElementById('closeXBtn');
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    
+    // Function to close modal
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+    
+    galleryImages.forEach(img => {
+      img.addEventListener('click', function() {
+        modal.classList.remove('hidden');
+        modalImg.src = this.getAttribute('data-src');
+        
+        // Extract filename from path for download
+        const imagePath = this.getAttribute('data-src');
+        const fileName = imagePath.split('/').pop();
+        
+        // Set download attributes
+        downloadBtn.setAttribute('data-src', imagePath);
+        downloadBtn.setAttribute('data-filename', fileName);
+      });
+    });
+    
+    // Close button handlers
+    closeBtn.addEventListener('click', closeModal);
+    closeXBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside the content
+    modal.addEventListener('click', function(e) {
+      // Close only if clicking outside the modal content (on the backdrop)
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+    
+    // Add keyboard support (ESC to close)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+    
+    // Download image
+    downloadBtn.addEventListener('click', function() {
+      const link = document.createElement('a');
+      link.href = this.getAttribute('data-src');
+      link.download = this.getAttribute('data-filename') || 'gallery-image.jpg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  });
+</script>
+{{ end }}

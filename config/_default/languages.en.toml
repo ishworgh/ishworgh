@@ -1,0 +1,67 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "ishworgh.xyz"
+# copyright = "Copy, _right?_ :thinking_face:"
+
+[params]
+  dateFormat = "2 January 2006"
+
+  # mainSections = ["section1", "section2"]
+  description = "Ishwor Ghimire's personal corner of the web: Explore a detailed resume, a visual journey through photo collections, and occasional blog posts covering diverse interests and shareable moments."
+
+[params.author]
+  name = "Ishwor Ghimire"
+  image = "img/author.jpg"
+  headline = "Aspiring Tourism Professional | Explorer | Digital Native"
+  bio = "An aspiring Travel and Tourism professional currently studying at NATHM. He brings both academic insight and hands-on experience to his perspective on the travel industry."
+  links = [
+     { email = "mailto:mail@ishworgh.xyz" },
+     { link = "https://ishworgh.xyz/" },
+     { github = "https://github.com/ishworgh" },
+     { linkedin = "https://linkedin.com/in/isor" },
+  #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+  #   { apple = "https://www.apple.com" },
+  #   { blogger = "https://username.blogspot.com/" },
+  #   { codepen = "https://codepen.io/username" },
+  #   { dev = "https://dev.to/username" },
+  #   { discord = "https://discord.gg/invitecode" },
+  #   { dribbble = "https://dribbble.com/username" },
+  #   { facebook = "https://facebook.com/username" },
+  #   { flickr = "https://www.flickr.com/photos/username/" },
+  #   { foursquare = "https://foursquare.com/username" },
+  #   { gitlab = "https://gitlab.com/username" },
+  #   { google = "https://www.google.com/" },
+  #   { google-scholar = "https://scholar.google.com/citations?user=user-id" },
+  #   { hashnode = "https://username.hashnode.dev" },
+  #   { instagram = "https://instagram.com/username" },
+  #   { keybase = "https://keybase.io/username" },
+  #   { kickstarter = "https://www.kickstarter.com/profile/username" },
+  #   { kofi = "https://ko-fi.com/username" },
+  #   { lastfm = "https://lastfm.com/user/username" },
+  #   { mastodon = "https://mastodon.instance/@username" },
+  #   { medium = "https://medium.com/username" },
+  #   { mendeley = "https://www.mendeley.com/" },
+  #   { microsoft = "https://www.microsoft.com/" },
+  #   { orcid = "https://orcid.org/userid" },
+  #   { patreon = "https://www.patreon.com/username" },
+  #   { pinterest = "https://pinterest.com/username" },
+  #   { reddit = "https://reddit.com/user/username" },
+  #   { researchgate = "https://www.researchgate.net/profile/username" },
+  #   { slack = "https://workspace.url/team/userid" },
+  #   { snapchat = "https://snapchat.com/add/username" },
+  #   { soundcloud = "https://soundcloud.com/username" },
+  #   { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+  #   { steam = "https://steamcommunity.com/profiles/userid" },
+  #   { telegram = "https://t.me/username" },
+  #   { threads = "https://threads.net/@username" },
+  #   { tiktok = "https://tiktok.com/@username" },
+  #   { tumblr = "https://username.tumblr.com" },
+  #   { twitch = "https://twitch.tv/username" },
+  #   { whatsapp = "https://wa.me/phone-number" },
+  #   { x-twitter = "https://twitter.com/username" },
+  #   { youtube = "https://youtube.com/username" },
+  #   { xing = "https://xing.com/profile/username" },
+  ]

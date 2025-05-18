@@ -1,0 +1,20 @@
+---
+title: "Photography Gallery"
+description: "*A collection of some of the photographs that I have taken over the years.*"
+layout: "gallery"
+resources:
+  - src: "images/chandragiri_hills.jpg"
+    title: "Whispers of the wind over Chandragiri's heights"
+  - src: "images/ktm_mountain_view.jpg"
+    title: "A tranquil vista from the heights of peace"
+  - src: "images/machhapuchre_khumai.jpg"
+    title: "The iconic Fish Tail beneath a proud Nepali banner"
+  - src: "images/monkey.jpg"
+    title: "Two little souls, observing the human world"
+  - src: "images/pashupatinath.jpg"
+    title: "A passage to spiritual serenityat"
+  - src: "images/pokhara_boats.jpg"
+    title: "Tranquil waters mirroring a peaceful escape"
+  - src: "images/taudaha.jpg"
+    title: "The quiet beauty of Taudaha"
+---

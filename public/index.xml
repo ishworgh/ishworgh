@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ishwor Ghimire on ishworgh.xyz</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Ishwor Ghimire on ishworgh.xyz</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a website using hugo and congo theme</title>
+      <link>http://localhost:1313/posts/creating-your-website-using-hugo--congo-theme/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/creating-your-website-using-hugo--congo-theme/</guid>
+      <description>This guide walks you through the process of creating and deploying a personal website using Hugo and the Congo theme. It starts with an introduction to why having a website is valuable and outlines the prerequisites, including Hugo and a GitHub account. The guide provides step-by-step instructions for setting up Hugo, installing the Congo theme, customizing the site, and deploying it to GitHub Pages. Whether you’re a beginner or someone looking for a quick start, this guide offers clear directions and even includes a sample GitHub Actions workflow to automate deployment. By the end, you’ll have a fully functional website hosted for free on GitHub Pages.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
