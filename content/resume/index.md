@@ -61,6 +61,43 @@ Prithvi Ma. Vi., Devchuli-10, Nawalpur
 ---
 ## **Professional Experience**
 
+### **Trainee Junior Assistant**
+
+Nepal Airlines Corporation (NAC)
+
+*Jul 2026 \- Present*
+
+* Assist in tracking, processing, and resolving delayed, lost, or damaged baggage claims
+
+* Coordinate with ground handling teams, security, and airline staff to ensure timely baggage delivery
+
+* Communicate with passengers regarding baggage issues with empathy and professionalism
+
+* Maintain accurate records and reports to support service quality and accountability
+
+* Gain firsthand experience in airport operations, customer service, and crisis resolution within the aviation industry 
+
+### **Event Associate**
+
+Vision Three Sixty
+
+*Dec 2024 \- Jul 2025*
+
+**Supported the successful delivery of two major World Bank events:**
+* Accelerating Foundational Learning: Going to Scale in South Asia (Dec 2024)
+
+* MANGO Launch Pad 2025 (Jun 2025)
+
+**Key contributions:**
+* Coordinated airport transfers and guest logistics
+
+* Led on-ground support to ensure smooth event flow
+
+* Assisted with pre-event planning and team coordination
+
+* Acted as a point of contact for attendees and partners
+
+
 ### **Assistant Coordinator (Intern)**
 
 Nepal Academy of Tourism and Hotel Management (NATHM)
@@ -93,21 +130,33 @@ Hotel Association of Nepal (HAN)
 ---
 ## **Skills and Achievements**
 
+### **Licenses & certifications**
+
+* Safety Management System Airside Safety Emergency Response Plan Fire Safety Human Factors SOP Laws *Nepal Airlines Corporation*
+
+  * Passenger Handling & Baggage Handling *Nepal Airlines Corporation*
+
+  * Licensed Trekking Guide *NATHM & MoCTCA*
+
+### **Honors & awards**
+
+* First National Tourism Conclave- 2022
+
+* Organizer of NATHM Hospitality Cup 2024 - An Indoor Cricket Tournament
+
 ### **Languages**
   * English
   * Nepali
   * Hindi
 
+
 ### **Volunteering**
 
-  * Guest Handling at “**Accelerating Foundational Learning: Going to Scale in South Asia**” hosted by the **World Bank**, **UNICEF** and **The Government of Nepal**. [{{< icon "link" >}}](vision360.jpg)
-
-
-  * Guest Handling at **Nepal International Tourism Expo (NITE)**
+  * Guest Services Associate **Nepal International Tourism Expo (NITE)**
 
   * Walkathon organized by **The Embassy of India, Kathmandu**
 
-  * Walkathon & Half Marathon by **NRS Sports Foundation**
+  * Event Coordinator **NRS Sports Foundation**
 
 ---
 ## **Interests**
