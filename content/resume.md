@@ -1,6 +1,7 @@
 ---
 title: "Ishwor Ghimire"
 layout: "single"
+type: "resume"
 image: "/me.jpg"
 pdf: "/resume.pdf"
 ---

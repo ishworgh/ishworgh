@@ -1,6 +1,7 @@
 ---
 title: "My Workflow"
 layout: "single"
+type: "workflow"
 config_url: "https://github.com/ishworgh"
 stack:
   - name: "Distro"

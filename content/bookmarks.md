@@ -3,6 +3,7 @@ title: "Bookmarks"
 date: 2023-10-27T15:42:33+05:45
 draft: false
 layout: "single"
+type: "bookmarks"
 
 categories:
   - name: "Essentials"
