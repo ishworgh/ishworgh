@@ -1,0 +1,45 @@
+baseURL = 'https://ishworgh.xyz/'
+languageCode = 'en-us'
+title = 'ishworgh'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 20
+  [[menu.main]]
+    identifier = "gallery"
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 30
+  [[menu.main]]
+    identifier = "workflow"
+    name = "Workflow"
+    url = "/workflow/"
+    weight = 40
+  [[menu.main]]
+    identifier = "bookmarks"
+    name = "Bookmarks"
+    url = "/bookmarks/"
+    weight = 50
+  [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume/"
+    weight = 60
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 70

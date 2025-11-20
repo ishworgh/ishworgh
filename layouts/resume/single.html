@@ -1,0 +1,399 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 font-sans text-text">
+
+    <!-- Header Section -->
+    <div class="text-center mb-16">
+        {{ if .Params.image }}
+        <div class="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden shadow-xl">
+            <img src="{{ .Params.image }}" alt="Profile" class="w-full h-full object-cover">
+        </div>
+        {{ end }}
+
+        <h1 class="text-5xl font-extrabold text-primary tracking-tight mb-3">Ishwor Ghimire</h1>
+        <p class="text-xl text-secondary font-medium mb-6">Aspiring Tourism Professional | Explorer | Digital Native</p>
+
+        <!-- Contact Info -->
+        <div class="flex flex-wrap justify-center gap-4 text-sm font-medium text-secondary/80">
+            <a href="tel:+9779867178655"
+                class="flex items-center gap-2 hover:text-primary transition-all px-3 py-1 rounded-full bg-surface border border-border hover:scale-105 hover:shadow-md">
+                <i data-feather="phone" class="w-4 h-4"></i> +977-9867178655
+            </a>
+            <a href="mailto:isor.gh9@gmail.com"
+                class="flex items-center gap-2 hover:text-primary transition-all px-3 py-1 rounded-full bg-surface border border-border hover:scale-105 hover:shadow-md">
+                <i data-feather="mail" class="w-4 h-4"></i> isor.gh9@gmail.com
+            </a>
+            <a href="https://ishworgh.xyz" target="_blank"
+                class="flex items-center gap-2 hover:text-primary transition-all px-3 py-1 rounded-full bg-surface border border-border hover:scale-105 hover:shadow-md">
+                <i data-feather="globe" class="w-4 h-4"></i> ishworgh.xyz
+            </a>
+            <a href="https://www.google.com/maps/place/Kathmandu,+Nepal" target="_blank"
+                class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border hover:text-primary transition-all hover:scale-105 hover:shadow-md">
+                <i data-feather="map-pin" class="w-4 h-4"></i> Kathmandu, Nepal
+            </a>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+        <!-- Left Column (Main Content) -->
+        <div class="lg:col-span-3 space-y-16">
+
+            <!-- Profile -->
+            <section id="profile" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-6 pb-2 border-b-2 border-border">
+                    <i data-feather="user" class="w-6 h-6"></i> Brief Profile
+                </h2>
+                <p class="text-lg leading-relaxed text-secondary/90">
+                    Aspiring professional with a strong foundation in Travel and Tourism Management, currently pursuing
+                    a degree at the Nepal Academy of Tourism and Hotel Management (NATHM). Demonstrates excellent
+                    communication, leadership, and organizational skills. Former Assistant Coordinator (Intern) at BHM
+                    Coordinator Office, overseeing administrative tasks, supervising approximately 1000 students, and
+                    counseling parents. Previous experience includes key research for the Hotel Association of Nepal's
+                    "Nepal Hotel Yearbook-2024" and serving as the Secretary of IT, Media, and Publication Club at
+                    NATHM.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section id="experience" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-8 pb-2 border-b-2 border-border">
+                    <i data-feather="briefcase" class="w-6 h-6"></i> Professional Experience
+                </h2>
+
+                <div class="space-y-10">
+                    <!-- Job 1 (New) -->
+                    <div class="relative pl-8 border-l-2 border-border hover:border-primary/50 transition-all group">
+                        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-bg"></div>
+                        <h3 class="text-xl font-bold text-text">Trainee Junior Assistant</h3>
+                        <div class="text-primary font-medium mb-2">Nepal Airlines Corporation (NAC)</div>
+                        <div class="text-sm text-secondary mb-4 flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> Jul 2025 - Present
+                        </div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-secondary/90">
+                            <li>Assist in tracking, processing, and resolving delayed, lost, or damaged baggage claims
+                            </li>
+                            <li>Maintain accurate records and reports to support service quality and accountability</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 (New) -->
+                    <div class="relative pl-8 border-l-2 border-border hover:border-primary/50 transition-colors">
+                        <div
+                            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-primary ring-4 ring-bg">
+                        </div>
+                        <h3 class="text-xl font-bold text-text">Event Associate</h3>
+                        <div class="text-primary font-medium mb-2">Vision Three Sixty</div>
+                        <div class="text-sm text-secondary mb-4 flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> Dec 2024 - Jun 2025
+                        </div>
+                        <div class="mb-2 text-secondary/90 italic">Supported the successful delivery of two major World
+                            Bank events: Accelerating Foundational Learning (Dec 2024) & MANGO Launch Pad 2025 (Jun
+                            2025)</div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-secondary/90">
+                            <li>Coordinated airport transfers and guest logistics</li>
+                            <li>Assisted with pre-event planning and team coordination</li>
+                            <li>Led on-ground support to ensure smooth event flow</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 (Old Job 1) -->
+                    <div class="relative pl-8 border-l-2 border-border hover:border-primary/50 transition-colors">
+                        <div
+                            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-primary ring-4 ring-bg">
+                        </div>
+                        <h3 class="text-xl font-bold text-text">Assistant Coordinator (Intern)</h3>
+                        <div class="text-primary font-medium mb-2">Nepal Academy of Tourism and Hotel Management (NATHM)
+                        </div>
+                        <div class="text-sm text-secondary mb-4 flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> May 2023 - May 2025
+                        </div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-secondary/90">
+                            <li>Manage class schedules and daily administrative tasks</li>
+                            <li>Create and edit promotional materials for the college and student clubs</li>
+                            <li>Supervise and counsel a student body of around 1000 individuals</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 4 (Old Job 2) -->
+                    <div class="relative pl-8 border-l-2 border-border hover:border-primary/50 transition-colors">
+                        <div
+                            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-primary ring-4 ring-bg">
+                        </div>
+                        <h3 class="text-xl font-bold text-text">Content Writer (Intern)</h3>
+                        <div class="text-primary font-medium mb-2">Himalayan Glacier Adventure and Travel Company</div>
+                        <div class="text-sm text-secondary mb-4 flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> January 2023 - May 2023
+                        </div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-secondary/90">
+                            <li>Developed and executed engaging travel content</li>
+                            <li>Created captivating travel guides and social media posts to enhance brand visibility and
+                                customer engagement</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 5 (Old Job 3) -->
+                    <div class="relative pl-8 border-l-2 border-border hover:border-primary/50 transition-colors">
+                        <div
+                            class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-primary ring-4 ring-bg">
+                        </div>
+                        <h3 class="text-xl font-bold text-text">Researcher</h3>
+                        <div class="text-primary font-medium mb-2">Hotel Association of Nepal (HAN)</div>
+                        <div class="text-sm text-secondary mb-4">"Nepal Hotel Yearbook-2024"</div>
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-secondary/90">
+                            <li>Assisted in the collection and identification of relevant raw data</li>
+                            <li>Ensured the accuracy and richness of content for the publication</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section id="education" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-8 pb-2 border-b-2 border-border">
+                    <i data-feather="book-open" class="w-6 h-6"></i> Education
+                </h2>
+
+                <div class="space-y-8">
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-lg font-bold text-text">Bachelor of Travel and Tourism Management (BTTM)
+                            </h3>
+                            <span class="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-full">2021 -
+                                Present</span>
+                        </div>
+                        <div class="text-secondary font-medium mb-2">Nepal Academy of Tourism and Hotel Management
+                            (NATHM)</div>
+                        <p class="text-sm text-secondary/80">TU Topper with 3.84 GPA in the 3rd Semester</p>
+                    </div>
+
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-lg font-bold text-text">Management (10+2)</h3>
+                            <span
+                                class="text-sm text-secondary font-medium bg-surface border border-border px-3 py-1 rounded-full">Completed</span>
+                        </div>
+                        <div class="text-secondary font-medium mb-2">Madhyabindu Multiple Campus</div>
+                        <p class="text-sm text-secondary/80">Kawasoti-3, Nawalpur</p>
+                    </div>
+
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-2">
+                            <h3 class="text-lg font-bold text-text">SLC</h3>
+                            <span
+                                class="text-sm text-secondary font-medium bg-surface border border-border px-3 py-1 rounded-full">Completed</span>
+                        </div>
+                        <div class="text-secondary font-medium mb-2">Prithvi Ma. Vi.</div>
+                        <p class="text-sm text-secondary/80">Devchuli-10, Nawalpur</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Licenses & Certificates -->
+            <section id="certificates" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-8 pb-2 border-b-2 border-border">
+                    <i data-feather="award" class="w-6 h-6"></i> Licenses & Certificates
+                </h2>
+
+                <div class="space-y-6">
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <h3 class="text-lg font-bold text-text mb-2">Safety Management System, Airside Safety, Emergency
+                            Response Plan, Fire Safety, Human Factors, SOP, Laws</h3>
+                        <div class="text-primary font-medium mb-2">Nepal Airlines Corporation</div>
+                        <div class="text-sm text-secondary flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> Issued Aug 2025 - Expires Aug 2027
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <h3 class="text-lg font-bold text-text mb-2">Passenger Handling & Baggage Handling</h3>
+                        <div class="text-primary font-medium mb-2">Nepal Airlines Corporation</div>
+                        <div class="text-sm text-secondary flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> Issued Aug 2025 - Expires Aug 2027
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm">
+                        <h3 class="text-lg font-bold text-text mb-2">Trekking Guide License</h3>
+                        <div class="text-primary font-medium mb-2">Nepal Academy of Tourism & Hotel Management</div>
+                        <div class="text-sm text-secondary flex items-center gap-2">
+                            <i data-feather="calendar" class="w-4 h-4"></i> Issued Feb 2025
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Honors & Awards -->
+            <section id="honors" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-8 pb-2 border-b-2 border-border">
+                    <i data-feather="award" class="w-6 h-6"></i> Honors & Awards
+                </h2>
+
+                <div class="space-y-4">
+                    <div
+                        class="flex items-start gap-3 p-4 bg-surface rounded-xl border border-border hover:border-primary/30 transition-colors">
+                        <div class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                        <span class="text-secondary/90">First National Tourism Conclave - 2022</span>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-3 p-4 bg-surface rounded-xl border border-border hover:border-primary/30 transition-colors">
+                        <div class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                        <span class="text-secondary/90">Organizer of NATHM Hospitality Cup 2024 - An Indoor Cricket
+                            Tournament</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section id="skills" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-6 pb-2 border-b-2 border-border">
+                    <i data-feather="cpu" class="w-6 h-6"></i> Skills & Languages
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-sm font-bold text-secondary uppercase tracking-wider mb-4">Languages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">English</span>
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Nepali</span>
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Hindi</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-secondary uppercase tracking-wider mb-4">Interests</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Traveling</span>
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Blogging</span>
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Video
+                                Creation</span>
+                            <span
+                                class="px-4 py-2 bg-surface border border-border rounded-lg text-sm font-medium text-text hover:border-primary transition-colors">Technology</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Volunteering -->
+            <section id="volunteering" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-6 pb-2 border-b-2 border-border">
+                    <i data-feather="heart" class="w-6 h-6"></i> Volunteering
+                </h2>
+                <div class="bg-surface rounded-xl border border-border p-6">
+                    <ul class="space-y-4 text-secondary/90">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                            <span>Guest Handling at <strong>Nepal International Tourism Expo (NITE)</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                            <span>Walkathon by <strong>Embassy of India</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                            <span>Walkathon & Half Marathon by <strong>NRS Sports Foundation</strong></span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- References -->
+            <section id="references" class="scroll-mt-24">
+                <h2 class="flex items-center gap-3 text-2xl font-bold text-primary mb-6 pb-2 border-b-2 border-border">
+                    <i data-feather="users" class="w-6 h-6"></i> References
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm group">
+                        <div class="font-bold text-lg text-text group-hover:text-primary transition-colors">Shubham
+                            Poudel</div>
+                        <div class="text-sm text-primary font-medium mb-1">Program Coordinator - BTTM</div>
+                        <div class="text-sm text-secondary mb-4">NATHM</div>
+                        <div class="space-y-2 text-sm">
+                            <a href="mailto:shubhampoudel@nathm.edu.np"
+                                class="flex items-center gap-2 text-secondary hover:text-accent transition-colors">
+                                <i data-feather="mail" class="w-4 h-4"></i> shubhampoudel@nathm.edu.np
+                            </a>
+                            <div class="flex items-center gap-2 text-secondary">
+                                <i data-feather="phone" class="w-4 h-4"></i> +977-9851179019
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface p-6 rounded-xl border border-border hover:border-primary/30 transition-colors shadow-sm group">
+                        <div class="font-bold text-lg text-text group-hover:text-primary transition-colors">Binod Aryal
+                        </div>
+                        <div class="text-sm text-primary font-medium mb-1">Program Coordinator - BHM</div>
+                        <div class="text-sm text-secondary mb-4">NATHM</div>
+                        <div class="space-y-2 text-sm">
+                            <a href="mailto:binodaryal@nathm.edu.np"
+                                class="flex items-center gap-2 text-secondary hover:text-accent transition-colors">
+                                <i data-feather="mail" class="w-4 h-4"></i> binodaryal@nathm.edu.np
+                            </a>
+                            <div class="flex items-center gap-2 text-secondary">
+                                <i data-feather="phone" class="w-4 h-4"></i> +977-9851071241
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column (Sidebar TOC) -->
+        <div class="hidden lg:block lg:col-span-1">
+            <div class="sticky top-24 space-y-8">
+                <!-- TOC -->
+                <div class="bg-surface rounded-xl border border-border p-6 shadow-sm">
+                    <a href="#" class="block">
+                        <h3
+                            class="text-sm font-bold text-secondary hover:text-primary uppercase tracking-wider mb-4 pb-2 border-b border-border transition-colors cursor-pointer">
+                            Contents</h3>
+                    </a>
+                    <nav class="space-y-1">
+                        <a href="#profile"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Brief
+                            Profile</a>
+                        <a href="#experience"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Experience</a>
+                        <a href="#education"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Education</a>
+                        <a href="#certificates"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Licenses
+                            & Certificates</a>
+                        <a href="#honors"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Honors
+                            & Awards</a>
+                        <a href="#skills"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Skills
+                            & Languages</a>
+                        <a href="#volunteering"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">Volunteering</a>
+                        <a href="#references"
+                            class="block px-3 py-2 rounded-md text-sm text-secondary hover:text-primary hover:bg-bg transition-all hover:translate-x-1">References</a>
+                    </nav>
+                </div>
+
+                <!-- Download Button -->
+                {{ if .Params.pdf }}
+                <a href="{{ .Params.pdf }}" download
+                    class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-bg font-bold rounded-lg hover:opacity-90 transition shadow-lg group">
+                    <i data-feather="download" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+                    Download Resume
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

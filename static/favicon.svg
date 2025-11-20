@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 64">
+  <style>
+    .text { font-family: monospace; font-weight: bold; font-size: 48px; fill: #2563eb; }
+    .cursor { font-family: monospace; font-weight: bold; font-size: 48px; fill: #2563eb; animation: blink 1s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+  <text x="10" y="48" class="text">&gt; ISHWOR<tspan class="cursor">_</tspan></text>
+</svg>

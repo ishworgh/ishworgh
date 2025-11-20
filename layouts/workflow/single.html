@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="max-w-3xl mx-auto">
+    <div class="flex items-center justify-between mb-8 border-b border-border pb-4">
+        <h1 class="text-3xl font-bold">Workflow</h1>
+        {{ if .Params.config_url }}
+        <a href="{{ .Params.config_url }}" target="_blank"
+            class="flex items-center gap-2 px-4 py-2 bg-primary text-bg rounded-full font-bold hover:opacity-90 transition">
+            <i data-feather="github" class="w-4 h-4"></i> View Config
+        </a>
+        {{ end }}
+    </div>
+
+    <div class="bg-surface rounded-lg border border-border overflow-hidden">
+        <table class="w-full text-left">
+            <thead class="bg-bg border-b border-border">
+                <tr>
+                    <th class="p-4 font-bold text-primary">Category</th>
+                    <th class="p-4 font-bold text-text">Tool</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+                {{ range .Params.stack }}
+                <tr class="hover:bg-bg/50 transition-colors">
+                    <td class="p-4 font-medium text-secondary">{{ .name }}</td>
+                    <td class="p-4">{{ .tool }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-8 prose prose-lg text-text">
+        {{ .Content }}
+    </div>
+</div>
+{{ end }}
