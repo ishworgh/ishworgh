@@ -17,7 +17,7 @@ pdf: "/resume.pdf"
 
 ## **Brief Profile**
 
-Aspiring professional with a strong foundation in Travel and Tourism Management, currently pursuing a degree at the Nepal Academy of Tourism and Hotel Management (NATHM). Demonstrates excellent communication, leadership, and organizational skills. Former Assistant Coordinator (Intern) at BHM Coordinator Office, overseeing administrative tasks, supervising approximately 1000 students, and counseling parents. Previous experience includes key research for the Hotel Association of Nepal's "Nepal Hotel Yearbook-2024" and serving as the Secretary of IT, Media, and Publication Club at NATHM.
+I’m passionate about travel, aviation, and hospitality, with experience as a Customer Service Department Intern at Nepal Airlines. I’ve gained valuable insights into airline services, customer care under pressure, and the importance of clear communication. I’m excited to explore opportunities that allow me to apply my skills, continue learning, and contribute to enhancing the travel experience.
 
 ---
 

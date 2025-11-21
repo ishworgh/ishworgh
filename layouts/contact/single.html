@@ -39,7 +39,7 @@
                 {{ range $index, $item := .Params.social }}
                 {{ if or (eq $item.name "GitHub") (eq $item.name "LinkedIn") }}
                 <a href="{{ $item.link }}" target="_blank"
-                    class="group relative flex items-center gap-4 p-6 bg-surface rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+                    class="group relative flex flex-col items-center justify-center gap-4 p-6 bg-surface rounded-2xl border border-border hover:border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
 
                     <!-- Gradient Background on Hover -->
                     <div
@@ -48,12 +48,12 @@
 
                     <!-- Icon -->
                     <div
-                        class="relative w-14 h-14 flex items-center justify-center bg-bg rounded-xl border border-border group-hover:border-primary group-hover:scale-110 transition-transform duration-300">
+                        class="relative w-14 h-14 flex items-center justify-center bg-bg rounded-xl border border-border group-hover:border-primary group-hover:scale-110 transition-transform duration-300 mb-2">
                         <i data-feather="{{ $item.icon }}" class="w-7 h-7 text-primary"></i>
                     </div>
 
                     <!-- Content -->
-                    <div class="relative flex-grow">
+                    <div class="relative flex-grow flex flex-col items-center justify-center text-center">
                         <div class="font-bold text-lg text-text group-hover:text-primary transition-colors">{{
                             $item.name }}</div>
                         <div class="text-secondary text-sm">{{ $item.handle }}</div>

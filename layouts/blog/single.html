@@ -64,13 +64,7 @@
                             <i data-feather="arrow-left" class="w-4 h-4"></i> Back to Blog
                         </a>
                         {{ if .Params.tags }}
-                        <div class="flex gap-2">
-                            {{ range .Params.tags }}
-                            <span
-                                class="px-3 py-1 bg-surface border border-border rounded-full text-sm text-secondary">{{
-                                . }}</span>
-                            {{ end }}
-                        </div>
+                        <!-- Tags removed as requested -->
                         {{ end }}
                     </div>
                 </footer>

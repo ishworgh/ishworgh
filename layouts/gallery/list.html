@@ -6,7 +6,7 @@
         {{ range .CurrentSection.Params.images }}
         <div class="break-inside-avoid">
             <div class="relative group rounded-lg overflow-hidden cursor-pointer">
-                <img src="{{ .url }}" alt="{{ .description }}"
+                <img src="{{ .url }}" alt="{{ .description }}" loading="lazy"
                     class="gallery-img w-full h-auto object-cover transition duration-300 group-hover:scale-105">
 
                 <!-- Download Button -->

@@ -1,0 +1,84 @@
+/* Inter */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Inter-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Inter-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/Inter-ExtraBold.ttf') format('truetype');
+}
+
+/* JetBrains Mono */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/JetBrainsMono-Bold.ttf') format('truetype');
+}
+
+/* Nerd Font Symbols */
+@font-face {
+  font-family: 'Symbols Nerd Font Mono';
+  src: url('/fonts/SymbolsNerdFontMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 
+   Combine JetBrains Mono and Nerd Font Symbols.
+   We use JetBrains Mono as the primary font, and Symbols Nerd Font Mono as fallback.
+   However, for the specific icon classes (.nf, etc), we usually want to force the Nerd Font.
+   But the user wanted "JetBrainsMono Nerd Font" for display.
+   So we can define a family that includes both.
+*/
+
+.nf, .nerd-font, .nerd-fonts {
+  font-family: 'Symbols Nerd Font Mono';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* If the user wants to use JetBrains Mono for code blocks or headers */
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Symbols Nerd Font Mono', monospace;
+}

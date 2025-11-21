@@ -3,6 +3,6 @@ title: "ishworgh"
 image_url: "/me.jpg"
 ---
 
-I am an aspiring tourism professional, explorer, and digital native. I love sharing travel stories, creative projects, and insights into the tourism industry.
+From the runway to the road, I am an aspiring professional in aviation and tourism. I document my adventures, creative endeavors, and insights into the world of travel.
 
 Welcome to my digital garden where I document my journey in tech, travel, and life.

@@ -4,7 +4,60 @@
         <img src="/me.jpg" alt="Profile" class="w-full h-full object-cover">
     </div>
     <div class="max-w-2xl">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-primary">Hi, I'm Ishwor.</h1>
+        <h1 id="typing-title" class="text-4xl md:text-6xl font-bold mb-4 text-primary min-h-[1.2em]">Hi, I'm Ishwor.
+        </h1>
+
+        <style>
+            .typing-cursor::after {
+                content: '|';
+                animation: blink 1s step-start infinite;
+                margin-left: 2px;
+                color: var(--primary-color);
+            }
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const titleElement = document.getElementById('typing-title');
+                const textToType = "Hi, I'm Ishwor.";
+
+                // Clear text initially (but keep height with min-h)
+                titleElement.textContent = "";
+                titleElement.classList.add("typing-cursor");
+
+                let charIndex = 0;
+                const typeSpeed = 150; // Slow typing speed
+
+                function typeWriter() {
+                    if (charIndex < textToType.length) {
+                        titleElement.textContent += textToType.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(typeWriter, typeSpeed);
+                    } else {
+                        // Animation complete
+                        // Optional: Remove cursor after a delay or keep it
+                        setTimeout(() => {
+                            titleElement.classList.remove("typing-cursor");
+                        }, 1000);
+                    }
+                }
+
+                // Start typing after a short delay
+                setTimeout(typeWriter, 500);
+            });
+        </script>
         <div class="prose prose-lg text-text mx-auto">
             {{ .Content }}
         </div>
