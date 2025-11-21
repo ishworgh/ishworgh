@@ -2,9 +2,12 @@
 <div class="max-w-7xl mx-auto py-8 px-4">
     <!-- Header -->
     <div class="text-center mb-8">
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary font-mono">
-            <span class="text-accent">&gt;</span> ISHWOR<span class="animate-pulse">_</span>
-        </h1>
+        <a href="https://ishworgh.xyz" target="_blank" class="inline-block">
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 text-primary font-mono hover:text-accent transition-colors">
+                <span class="text-accent">&gt;</span> ISHWOR<span class="animate-pulse">_</span>
+            </h1>
+        </a>
+
 
         <!-- Search Bar -->
         <div class="relative max-w-md mx-auto">
@@ -15,8 +18,20 @@
         </div>
     </div>
 
+    <!-- Search Results Container (Hidden by default, shown during search) -->
+    <div id="search-results" class="hidden max-w-2xl mx-auto mb-8">
+        <div class="bg-surface border border-border rounded-xl p-4 shadow-lg">
+            <div id="search-results-list" class="space-y-2">
+                <!-- Search results will be dynamically inserted here -->
+            </div>
+            <div id="no-results" class="hidden text-center py-8 text-secondary">
+                No bookmarks found
+            </div>
+        </div>
+    </div>
+
     <!-- Bookmarks Categories -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-4">
+    <div id="bookmarks-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-4">
         {{ range .Params.categories }}
         <div
             class="bookmark-category bg-surface border border-border rounded-xl p-3 shadow-sm hover:shadow-md transition-all">
@@ -32,12 +47,13 @@
             <div class="grid grid-cols-1 gap-1 mt-2">
                 {{ range .items }}
                 <a href="{{ .url }}" target="_blank"
-                    class="bookmark-card group flex items-center gap-2 p-2 rounded-lg hover:bg-bg transition-all duration-200">
+                    class="bookmark-card group flex items-center gap-2 p-2 rounded-lg hover:bg-bg transition-all duration-200"
+                    data-title="{{ .title }}" data-url="{{ .url }}" data-icon="{{ .icon }}">
 
                     <!-- Icon -->
                     <div
                         class="w-5 h-5 flex items-center justify-center text-base text-primary group-hover:scale-110 transition-transform flex-shrink-0">
-                        <i class="{{ .icon }}"></i>
+                        <span class="leading-none">{{ .icon }}</span>
                     </div>
 
                     <!-- Title -->
@@ -60,8 +76,11 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const searchInput = document.getElementById('bookmark-search');
+        const bookmarksGrid = document.getElementById('bookmarks-grid');
+        const searchResults = document.getElementById('search-results');
+        const searchResultsList = document.getElementById('search-results-list');
+        const noResults = document.getElementById('no-results');
         const cards = document.querySelectorAll('.bookmark-card');
-        const categories = document.querySelectorAll('.bookmark-category');
 
         // Focus shortcut
         document.addEventListener('keydown', (e) => {
@@ -73,30 +92,100 @@
 
         // Search functionality
         searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
+            const query = e.target.value.toLowerCase().trim();
 
-            cards.forEach(card => {
-                const title = card.querySelector('span').textContent.toLowerCase();
-                const url = card.getAttribute('href').toLowerCase();
+            if (query === '') {
+                // Show normal grid, hide search results
+                bookmarksGrid.classList.remove('hidden');
+                searchResults.classList.add('hidden');
+            } else {
+                // Hide normal grid, show search results
+                bookmarksGrid.classList.add('hidden');
+                searchResults.classList.remove('hidden');
 
-                if (title.includes(query) || url.includes(query)) {
-                    card.style.display = 'flex';
+                // Clear previous search results
+                searchResultsList.innerHTML = '';
+
+                // Find matching bookmarks
+                const matches = [];
+                cards.forEach(card => {
+                    const title = card.dataset.title.toLowerCase();
+                    const url = card.dataset.url.toLowerCase();
+
+                    if (title.includes(query) || url.includes(query)) {
+                        // Get the actual icon text from the DOM element
+                        const iconElement = card.querySelector('span.leading-none');
+                        const icon = iconElement ? iconElement.textContent : '🔗';
+
+                        matches.push({
+                            title: card.dataset.title,
+                            url: card.dataset.url,
+                            icon: icon
+                        });
+                    }
+                });
+
+                // Display results
+                if (matches.length === 0) {
+                    noResults.classList.remove('hidden');
                 } else {
-                    card.style.display = 'none';
-                }
-            });
+                    noResults.classList.add('hidden');
 
-            // Hide empty categories
-            categories.forEach(category => {
-                const visibleCards = Array.from(category.querySelectorAll('.bookmark-card'))
-                    .filter(c => c.style.display !== 'none');
+                    matches.forEach(match => {
+                        const resultItem = document.createElement('a');
+                        resultItem.href = match.url;
+                        resultItem.target = '_blank';
+                        resultItem.className = 'group flex items-center gap-3 p-3 rounded-lg hover:bg-bg transition-all duration-200 border border-transparent hover:border-primary';
 
-                if (query === '' || visibleCards.length > 0) {
-                    category.style.display = 'block';
-                } else {
-                    category.style.display = 'none';
+                        // Create icon element
+                        const iconDiv = document.createElement('div');
+                        iconDiv.className = 'w-6 h-6 flex items-center justify-center text-lg text-primary group-hover:scale-110 transition-transform flex-shrink-0';
+                        const iconSpan = document.createElement('span');
+                        iconSpan.className = 'leading-none';
+                        iconSpan.textContent = match.icon;
+                        iconDiv.appendChild(iconSpan);
+
+                        // Create title element
+                        const titleSpan = document.createElement('span');
+                        titleSpan.className = 'flex-grow text-sm font-medium text-text group-hover:text-primary transition-colors';
+                        titleSpan.textContent = match.title;
+
+                        // Create external link icon
+                        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        svg.setAttribute('width', '16');
+                        svg.setAttribute('height', '16');
+                        svg.setAttribute('viewBox', '0 0 24 24');
+                        svg.setAttribute('fill', 'none');
+                        svg.setAttribute('stroke', 'currentColor');
+                        svg.setAttribute('stroke-width', '2');
+                        svg.setAttribute('stroke-linecap', 'round');
+                        svg.setAttribute('stroke-linejoin', 'round');
+                        svg.setAttribute('class', 'text-secondary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0');
+
+                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        path.setAttribute('d', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6');
+                        svg.appendChild(path);
+
+                        const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+                        polyline.setAttribute('points', '15 3 21 3 21 9');
+                        svg.appendChild(polyline);
+
+                        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                        line.setAttribute('x1', '10');
+                        line.setAttribute('y1', '14');
+                        line.setAttribute('x2', '21');
+                        line.setAttribute('y2', '3');
+                        svg.appendChild(line);
+
+                        // Append all elements
+                        resultItem.appendChild(iconDiv);
+                        resultItem.appendChild(titleSpan);
+                        resultItem.appendChild(svg);
+
+                        searchResultsList.appendChild(resultItem);
+                    });
                 }
-            });
+            }
         });
     });
 </script>

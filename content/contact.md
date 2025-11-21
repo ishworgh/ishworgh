@@ -5,7 +5,7 @@ type: "contact"
 social:
   - name: "Email"
     handle: "hello@ishworgh.xyz"
-    link: "mailto:hello@ishworgh.xyz"
+    link: "mailto:mail@ishworgh.xyz"
     icon: "mail"
   - name: "GitHub"
     handle: "@ishworgh"
