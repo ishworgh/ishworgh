@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Gallery Lightbox ---
     initLightbox();
+    initGalleryLayout();
 
     // --- Bookmark Search ---
     initBookmarkSearch();
@@ -262,27 +263,132 @@ async function fetchWeather() {
 }
 
 // --- Lightbox ---
+// --- Gallery Lightbox ---
+// --- Gallery Lightbox ---
+// --- Gallery Lightbox ---
 function initLightbox() {
-    const images = document.querySelectorAll('.gallery-img');
+    console.log('Initializing Lightbox with Event Delegation...');
+    const container = document.getElementById('gallery-container');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const downloadBtn = document.getElementById('lightbox-download');
     const closeBtn = document.getElementById('lightbox-close');
 
-    if (!lightbox) return;
+    if (!container || !lightbox) {
+        console.error('Lightbox or gallery container not found!');
+        return;
+    }
 
-    images.forEach(img => {
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            downloadBtn.href = img.src;
-            lightbox.classList.remove('hidden');
-        });
+    // Use Event Delegation on the container
+    container.addEventListener('click', (e) => {
+        // Find the closest gallery item parent of the clicked element
+        const item = e.target.closest('.gallery-item');
+
+        // If a gallery item was clicked
+        if (item) {
+            // Ignore clicks on the download button (which is an anchor tag)
+            if (e.target.closest('a')) return;
+
+            console.log('Gallery item clicked (delegated)');
+            const img = item.querySelector('img');
+            if (img) {
+                console.log('Opening lightbox for:', img.src);
+                lightboxImg.src = img.src;
+                downloadBtn.href = img.src;
+                lightbox.classList.remove('hidden');
+            } else {
+                console.error('Image not found in gallery item');
+            }
+        }
     });
 
-    closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
+    closeBtn.addEventListener('click', () => {
+        console.log('Closing lightbox via button');
+        lightbox.classList.add('hidden');
+    });
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) lightbox.classList.add('hidden');
+        if (e.target === lightbox) {
+            console.log('Closing lightbox via background click');
+            lightbox.classList.add('hidden');
+        }
     });
+}
+
+// --- Gallery Layout Toggle ---
+function initGalleryLayout() {
+    console.log('Initializing Gallery Layout...');
+    const container = document.getElementById('gallery-container');
+    const btnMasonry = document.getElementById('layout-masonry');
+    const btnGrid = document.getElementById('layout-grid');
+
+    if (!container || !btnMasonry || !btnGrid) {
+        console.error('Gallery layout elements not found:', { container, btnMasonry, btnGrid });
+        return;
+    }
+
+    // Layout Classes
+    const masonryClasses = ['columns-1', 'md:columns-2', 'lg:columns-3', 'space-y-4'];
+    const gridClasses = ['grid', 'grid-cols-1', 'md:grid-cols-2', 'lg:grid-cols-3'];
+
+    // Helper to set active button state
+    function setActiveButton(mode) {
+        if (mode === 'masonry') {
+            btnMasonry.classList.add('text-primary', 'bg-bg');
+            btnMasonry.classList.remove('text-secondary');
+            btnGrid.classList.remove('text-primary', 'bg-bg');
+            btnGrid.classList.add('text-secondary');
+        } else {
+            btnGrid.classList.add('text-primary', 'bg-bg');
+            btnGrid.classList.remove('text-secondary');
+            btnMasonry.classList.remove('text-primary', 'bg-bg');
+            btnMasonry.classList.add('text-secondary');
+        }
+    }
+
+    // Helper to apply layout
+    function applyLayout(mode) {
+        console.log('Applying layout:', mode);
+
+        // Use loops for class manipulation to be safe
+        if (mode === 'masonry') {
+            gridClasses.forEach(c => container.classList.remove(c));
+            masonryClasses.forEach(c => container.classList.add(c));
+
+            // Reset image heights for masonry
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                img.classList.remove('h-64', 'w-full', 'object-cover');
+                img.classList.add('w-full', 'h-auto');
+            });
+        } else {
+            masonryClasses.forEach(c => container.classList.remove(c));
+            gridClasses.forEach(c => container.classList.add(c));
+
+            // Force uniform height for grid
+            document.querySelectorAll('.gallery-img').forEach(img => {
+                img.classList.remove('w-full', 'h-auto');
+                img.classList.add('h-64', 'w-full', 'object-cover');
+            });
+        }
+        setActiveButton(mode);
+        try {
+            localStorage.setItem('galleryLayout', mode);
+        } catch (e) {
+            console.warn('Failed to save layout preference:', e);
+        }
+    }
+
+    // Event Listeners
+    btnMasonry.addEventListener('click', () => applyLayout('masonry'));
+    btnGrid.addEventListener('click', () => applyLayout('grid'));
+
+    // Init
+    let savedLayout = 'masonry';
+    try {
+        savedLayout = localStorage.getItem('galleryLayout') || 'masonry';
+    } catch (e) {
+        console.warn('Failed to read layout preference:', e);
+    }
+    applyLayout(savedLayout);
 }
 
 // --- Bookmark Search ---

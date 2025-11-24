@@ -1,19 +1,19 @@
 ---
 title: "Gallery"
 images:
-  - url: "/images/chandragiri_hills.jpg"
+  - url: "/images/chandragiri_hills.webp"
     description: "Chandragiri Hills"
-  - url: "/images/ktm_mountain_view.jpg"
+  - url: "/images/ktm_mountain_view.webp"
     description: "Kathmandu Mountain View"
-  - url: "/images/machhapuchre_khumai.jpg"
+  - url: "/images/machhapuchre_khumai.webp"
     description: "Machhapuchre from Khumai"
-  - url: "/images/monkey.jpg"
+  - url: "/images/monkey.webp"
     description: "Monkey"
-  - url: "/images/pashupatinath.jpg"
+  - url: "/images/pashupatinath.webp"
     description: "Pashupatinath Temple"
-  - url: "/images/pokhara_boats.jpg"
+  - url: "/images/pokhara_boats.webp"
     description: "Pokhara Boats"
-  - url: "/images/taudaha.jpg"
+  - url: "/images/taudaha.webp"
     description: "Taudaha Lake"
 ---
 

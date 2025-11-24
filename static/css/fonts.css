@@ -1,55 +1,4 @@
-/* Inter */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/Inter-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/fonts/Inter-Medium.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/Inter-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/fonts/Inter-ExtraBold.ttf') format('truetype');
-}
-
-/* JetBrains Mono */
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('/fonts/JetBrainsMono-Bold.ttf') format('truetype');
-}
+/* Inter and JetBrains Mono are loaded via Google Fonts in baseof.html */
 
 /* Nerd Font Symbols */
 @font-face {
@@ -67,7 +16,9 @@
    So we can define a family that includes both.
 */
 
-.nf, .nerd-font, .nerd-fonts {
+.nf,
+.nerd-font,
+.nerd-fonts {
   font-family: 'Symbols Nerd Font Mono';
   font-style: normal;
   font-weight: normal;
@@ -79,6 +30,8 @@
 }
 
 /* If the user wants to use JetBrains Mono for code blocks or headers */
-code, pre, .font-mono {
+code,
+pre,
+.font-mono {
   font-family: 'JetBrains Mono', 'Symbols Nerd Font Mono', monospace;
 }

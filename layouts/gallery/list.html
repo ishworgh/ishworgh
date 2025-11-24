@@ -1,11 +1,23 @@
 {{ define "main" }}
 <div class="max-w-6xl mx-auto">
-    <h1 class="text-3xl font-bold mb-8 border-b border-border pb-4">Gallery</h1>
+    <div class="flex justify-between items-center mb-8 border-b border-border pb-4">
+        <h1 class="text-3xl font-bold">Gallery</h1>
+        <div class="flex gap-2 bg-surface p-1 rounded-lg border border-border">
+            <button id="layout-masonry" class="p-2 rounded hover:bg-bg text-primary transition-colors"
+                title="Masonry View">
+                <i data-feather="grid" class="w-5 h-5"></i>
+            </button>
+            <button id="layout-grid" class="p-2 rounded hover:bg-bg text-secondary hover:text-primary transition-colors"
+                title="Grid View">
+                <i data-feather="layout" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
 
-    <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+    <div id="gallery-container" class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4 transition-all duration-500">
         {{ range .CurrentSection.Params.images }}
-        <div class="break-inside-avoid">
-            <div class="relative group rounded-lg overflow-hidden cursor-pointer">
+        <div class="break-inside-avoid gallery-item mb-4">
+            <div class="relative group rounded-lg overflow-hidden cursor-pointer h-full">
                 <img src="{{ .url }}" alt="{{ .description }}" loading="lazy"
                     class="gallery-img w-full h-auto object-cover transition duration-300 group-hover:scale-105">
 

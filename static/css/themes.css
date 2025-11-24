@@ -4,8 +4,8 @@
     --bg-color: #1e1e2e;
     --text-color: #cdd6f4;
     --primary-color: #89b4fa;
-    --secondary-color: #f5c2e7;
-    --accent-color: #cba6f7;
+    --secondary-color: #74c7ec; /* Sapphire */
+    --accent-color: #89dceb;    /* Sky */
     --surface-color: #313244;
     --border-color: #45475a;
 }
@@ -16,8 +16,8 @@
     --bg-color: #eff1f5;
     --text-color: #4c4f69;
     --primary-color: #1e66f5;
-    --secondary-color: #ea76cb;
-    --accent-color: #8839ef;
+    --secondary-color: #209fb5; /* Sapphire */
+    --accent-color: #04a5e5;    /* Sky */
     --surface-color: #e6e9ef;
     --border-color: #ccd0da;
 }
@@ -27,8 +27,8 @@
     --bg-color: #1e1e2e;
     --text-color: #cdd6f4;
     --primary-color: #89b4fa;
-    --secondary-color: #f5c2e7;
-    --accent-color: #cba6f7;
+    --secondary-color: #74c7ec; /* Sapphire */
+    --accent-color: #89dceb;    /* Sky */
     --surface-color: #313244;
     --border-color: #45475a;
 }
