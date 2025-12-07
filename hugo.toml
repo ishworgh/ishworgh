@@ -23,11 +23,11 @@ title = 'ishworgh'
     name = "Gallery"
     url = "/gallery/"
     weight = 30
-  [[menu.main]]
-    identifier = "workflow"
-    name = "Workflow"
-    url = "/workflow/"
-    weight = 40
+# [[menu.main]]
+#   identifier = "workflow"
+#    name = "Workflow"
+#   url = "/workflow/"
+#   weight = 40
   [[menu.main]]
     identifier = "bookmarks"
     name = "Bookmarks"
